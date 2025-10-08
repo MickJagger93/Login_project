@@ -1,0 +1,73 @@
+{% extends '/layouts/base_register.html' %}
+
+{% block content %}
+    
+    <div class="split-container">
+        
+        <div class="form-panel">
+            
+            <h2 class="sub-title">Register</h2>
+            
+            <form class="form-style" method="POST" action="{{ url_for('auth.register') }}">
+            
+                {{ form.hidden_tag() }}
+                {{ form.csrf_token }}
+
+                <div class="floating-label">
+                    {{ form.name(placeholder=" ") }}
+                    <label for="name">Name</label>
+                </div>
+                
+                <div class="floating-label">
+                    {{ form.email(placeholder=" ") }}
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="floating-label" style="position: relative;">
+                    {{ form.password(placeholder=" ", id="password-input") }}
+                    <label for="password">Password</label>
+                    <button type="button" id="toggle-password" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer;">
+                        👁️
+                    </button>
+                </div>
+                
+                <div class="floating-label" style="position: relative;">
+                    {{ form.confirm_password(placeholder=" ", id="confirm-password-input") }}
+                    <label for="confirm_password">Confirm Password</label>
+                    <button type="button" id="toggle-confirm-password" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer;">
+                        👁️
+                    </button>
+                </div>
+                
+                <div id="spinner" class="spinner" style="display:none;"></div>
+                <button type="submit" class="btn-style">Register</button>
+            
+            </form>
+
+            <div class="flash-messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="flash-message">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            
+            <p>
+                <a class="centered-link" href="{{ url_for('auth.login') }}">Already have an account? Log in</a>
+            </p>
+            
+            <p>
+                <a class="centered-link" href="{{ url_for('main.home') }}">Back To Home</a>
+            </p>
+
+        </div>
+        <div class="image-panel">
+            <img src="{{ url_for('static', filename='img/Screenshot_11.png') }}" alt="Register Image">
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}

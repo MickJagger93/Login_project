@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/landing.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/Screenshot_15.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>{% block title %}Landing{% endblock %}</title>
+</head>
+<body class="body-container">
+    {% block content %}{% endblock %}
+</body>
+</html>

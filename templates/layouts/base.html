@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Miguel Quevedo" content="Python/Flask/Jinja2">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='style/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='style/section.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/Screenshot_15.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    {% block style %}{% endblock %}
+    <title>{% block title %} Login App {% endblock %}</title>
+</head>
+<body class="body-container">
+    {% include 'layouts/partials/header.html' %}
+
+    {% include 'layouts/partials/menu.html' %}
+
+    {% include 'layouts/partials/section.html' %}
+    
+    {% block content %}{% endblock %}
+</body>
+</html>

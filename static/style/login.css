@@ -1,0 +1,223 @@
+body {
+    background:
+        url("/static/img/Screenshot_36.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.body-container {
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;     
+}
+
+.sub-title {
+    color: white;
+    text-align: center;
+    font-size: 35px;
+}
+
+.login-container form div {
+    margin-bottom: 18px;
+    width: 100%
+}
+
+.login-container label {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.floating-label {
+    position: relative;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.floating-label input {
+    width: 100%;
+    padding: 12px 10px 12px 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #aaa;
+    font-size: 14px;
+    pointer-events: none;
+    background: transparent;
+    transition: 0.2s ease all;
+    z-index: 4;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+    top: -14px;
+    left: 8px;
+    font-size: 10px;
+    color: #fff;
+    background: transparent;
+    padding: 0 4px;
+    z-index: 4;
+}
+
+.btn-style {
+    background: none;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-style:hover {
+    background: blue;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+.centered-link {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+.centered-link:hover {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+    transition: all 0.3s;
+}
+
+.login-container form {
+    background: linear-gradient(120deg, #232526, #414345, #23243a, #1a2980, #232526);
+    background-size: 400% 400%;
+    animation: gradient-move 35s ease infinite;
+    border-radius: 12px;
+    box-shadow: 0 0 18px #000;
+    padding: 35px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 60px;
+}
+
+.split-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 80vh;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.form-panel {
+    position: relative;
+    z-index: 2;
+    background:  rgba(34, 34, 34, 0.35);
+    border: none;
+    border-radius: 18px 0 0 18px;
+    box-shadow: none;
+    padding: 48px 40px;
+    min-width: 350px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    backdrop-filter: blur(12px);      
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1.5px solid rgba(255,255,255,0.18)
+}
+
+.form-panel::after {
+    content: "";
+    position: absolute;
+    top: 0; right: -40px;
+    width: 80px;
+    height: 100%;
+    z-index: 3;
+    transform: skew(-20deg);
+    pointer-events: none;
+}
+
+.image-panel {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 18px 18px 0;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+.image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 18px 18px 0;
+    box-shadow: 0 0 18px #000;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #1a2980;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+.flash-messages {
+    width: 100%;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flash-message {
+    background: rgba(255, 80, 80, 0.85);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    text-align: center;
+    animation: fade-in 0.6s;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
