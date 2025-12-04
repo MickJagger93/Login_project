@@ -21,18 +21,6 @@ body {
     font-size: 35px;
 }
 
-
-.register-container form div {
-    margin-bottom: 18px;
-    width: 100%
-}
-
-.register-container label {
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-}
-
 .floating-label {
     position: relative;
     margin-bottom: 18px;
@@ -98,28 +86,6 @@ body {
 .centered-link:hover {
     text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
     transition: all 0.3s;
-}
-
-.register-container form {
-    background: linear-gradient(120deg, #232526, #414345, #23243a, #1a2980, #232526);
-    background-size: 400% 400%;
-    animation: gradient-move 35s ease infinite;
-    border-radius: 12px;
-    box-shadow: 0 0 18px #000;
-    padding: 35px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 350px;
-}
-
-.register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    justify-content: flex-start;
-    padding-top: 60px;
 }
 
 .split-container {
