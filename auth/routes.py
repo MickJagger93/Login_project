@@ -1,10 +1,3 @@
-"""
-routes.py
-
-Define las rutas de autenticación de la aplicación Flask.
-Incluye rutas para registro, inicio de sesión, restablecimiento de contraseña y cierre de sesión.
-"""
-
 from flask import Blueprint, render_template, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required
 from models import User, db
@@ -15,18 +8,6 @@ auth_bp = Blueprint('auth', __name__)
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
 
-    """
-    Maneja el registro de nuevos usuarios.
-
-    - Valida el formulario de registro.
-    - Verifica si las contraseñas coinciden.
-    - Verifica si el correo ya está registrado.
-    - Crea un nuevo usuario y lo guarda en la base de datos.
-
-    Returns:
-        Renderiza la plantilla de registro o redirige al login tras el registro exitoso.
-    """
-    
     form = RegisterForm()
 
     if form.validate_on_submit():
@@ -62,17 +43,6 @@ def register():
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
 
-    """
-    Maneja el inicio de sesión de usuarios.
-
-    - Valida el formulario de login.
-    - Verifica las credenciales del usuario.
-    - Inicia sesión si las credenciales son correctas.
-
-    Returns:
-        Renderiza la plantilla de login o redirige a la página protegida tras el login exitoso.
-    """
-    
     form = LoginForm()
     
     if form.validate_on_submit():
@@ -94,17 +64,6 @@ def login():
 @auth_bp.route('/reset_password', methods=['GET', 'POST'])
 def reset_password():
 
-    """
-    Permite a los usuarios restablecer su contraseña.
-
-    - Valida el formulario de restablecimiento.
-    - Verifica que las nuevas contraseñas coincidan.
-    - Actualiza la contraseña del usuario en la base de datos.
-
-    Returns:
-        Renderiza la plantilla de restablecimiento o redirige al login tras el cambio exitoso.
-    """
-    
     form = ResetForm()
 
     if form.validate_on_submit:
@@ -134,12 +93,6 @@ def reset_password():
 @login_required
 def logout():
 
-    """
-    Cierra la sesión del usuario autenticado.
-
-    Returns:
-        Redirige a la página de login tras cerrar sesión.
-    """
     logout_user()
     flash('You have been logged out succesfully.')
     return redirect(url_for('auth.login'))
